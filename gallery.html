@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery | floravibe</title>
+  <link rel="stylesheet" href="pstyle.css">
+  <link rel="shortcut icon" type="image/png" href="fav-icon.png">
+
+</head>
+<body>
+  <header>
+    <input type="checkbox" id="toggler">
+  <label for="toggler" class="fas fa-bars"></label>
+
+  <a href="#" class="logo">floravibe<span>.</span></a>
+    
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      
+      <a href="contact.html">Contact</a>
+    </nav>
+    
+  </header>
+
+  <main>
+    <section class="gallery"><div class="gallery-header">
+  <h2>Welcome to floravibe's Product Gallery</h2>
+  <p class="subtitle">Floral Stories in Every Stem</p>
+<p class="description">
+  Welcome to our gallery—a visual journal of floravibe’s floral artistry. Each arrangement is thoughtfully designed to reflect emotion, intention, and style. From minimalist bouquets to statement pieces, explore how we blend color, texture, and form to create moments that linger.
+    At floravibe, every bloom is a brushstroke in nature’s masterpiece. Our gallery showcases a curated collection of floral designs—from timeless roses to handcrafted baskets and bespoke bouquets. Whether you're seeking a single stem to say “I care” or a lavish arrangement to celebrate life’s milestones, you’ll find inspiration in every petal.
+  </p>
+</div></section>
+
+  <section class="gallery">
+  <!-- Roses Section -->
+  <div class="category-block">
+    <h3>Roses</h3>
+    <div class="card-row">
+      <!-- Red Rose -->
+      <div class="card">
+        <div class="product" onclick="openModal('red-rose')">
+          <img src="rrose.jpg" alt="Red Rose">
+          <div class="card-info">
+            <p>Red Rose</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pink Rose -->
+      <div class="card">
+        <div class="product" onclick="openModal('pink-rose')">
+          <img src="rose.jpg" alt="Pink Rose">
+          <div class="card-info">
+            <p>Pink Rose</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Yellow Rose -->
+      <div class="card">
+        <div class="product" onclick="openModal('yellow-rose')">
+          <img src="yrose.jpg" alt="Yellow Rose">
+          <div class="card-info">
+            <p>Yellow Rose</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- White Rose -->
+      <div class="card">
+        <div class="product" onclick="openModal('white-rose')">
+          <img src="wrose2.jpg" alt="White Rose">
+          <div class="card-info">
+            <p>White Rose</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Orange Rose -->
+      <div class="card">
+        <div class="product" onclick="openModal('orange-rose')">
+          <img src="orose1.jpg" alt="Orange Rose">
+          <div class="card-info">
+            <p>Orange Rose</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Red Rose Modal -->
+<!-- Red Rose Modal -->
+<div id="red-rose-modal" class="modal">
+  <div class="modal-content two-column">
+    <span class="close" onclick="closeModal('red-rose')">&times;</span>
+
+    <!-- Left: Image -->
+    <div class="modal-left">
+      <img src="rrose.jpg" alt="Red Rose">
+    </div>
+
+    <!-- Right: Details -->
+    <div class="modal-right">
+      <h2>Red Rose</h2>
+      <p class="price">₹99 <span class="original">₹150</span> <span class="discount">25% off</span></p>
+      <p class="rating">⭐ 4.6 (314 reviews)</p>
+
+      <ul class="offers">
+        <li>🎟️ Use code <strong>TRYWITNI</strong> for 10% off</li>
+        <li>🎟️ Use code <strong>WIN50</strong> for ₹15% off</li>
+      </ul>
+      <button class="order-button" onclick="openOrderForm('Red Rose')">Order Now</button>
+    </div>
+  </div>
+</div>
+
+<!-- Pink Rose Modal -->
+<div id="pink-rose-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('pink-rose')">&times;</span>
+    <div class="modal-left">
+      <img src="rose.jpg" alt="Pink Rose">
+    </div>
+    <div class="modal-right">
+      <h2>Pink Rose</h2>
+      <p>Graceful and elegant. A symbol of admiration and sweetness.</p>
+      <p class="price">₹99 <span class="original">₹150</span> <span class="discount">25% off</span></p>
+      <p class="rating">⭐ 4.6 (314 reviews)</p>
+
+      <ul class="offers">
+        <li>🎟️ Use code <strong>TRYWITNI</strong> for ₹10% off</li>
+        <li>🎟️ Use code <strong>WIN50</strong> for ₹15 off</li>
+      </ul>
+
+      <button class="order-button" onclick="openOrderForm('Pink Rose')">Order Now</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- Yellow Rose Modal -->
+<div id="yellow-rose-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('yellow-rose')">&times;</span>
+    <div class="modal-left">
+      <img src="yrose.jpg" alt="Yellow Rose">
+    </div>
+    <div class="modal-right">
+      <h2>Yellow Rose</h2>
+      <p>Bright and cheerful. Perfect for friendship and joy.</p>
+      <p class="price">₹99 <span class="original">₹150</span> <span class="discount">25% off</span></p>
+      <p class="rating">⭐ 4.6 (314 reviews)</p>
+
+      <ul class="offers">
+        <li>🎟️ Use code <strong>TRYWITNI</strong> for ₹10% off</li>
+        <li>🎟️ Use code <strong>WIN50</strong> for ₹15% off</li>
+      </ul>
+
+      <button class="order-button" onclick="openOrderForm('Yellow Rose')">Order Now</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- White Rose Modal -->
+<div id="white-rose-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('white-rose')">&times;</span>
+    <div class="modal-left">
+      <img src="wrose.jpg" alt="White Rose">
+    </div>
+    <div class="modal-right">
+      <h2>White Rose</h2>
+      <p>Pure and serene. A gentle expression of respect and remembrance.</p>
+      <p class="price">₹99 <span class="original">₹150</span> <span class="discount">25% off</span></p>
+      <p class="rating">⭐ 4.6 (314 reviews)</p>
+
+      <ul class="offers">
+        <li>🎟️ Use code <strong>TRYWITNI</strong> for ₹10% off</li>
+        <li>🎟️ Use code <strong>WIN50</strong> for ₹15 off</li>
+      </ul>
+      <button class="order-button" onclick="openOrderForm('White Rose')">Order Now</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- Orange Rose Modal -->
+<div id="orange-rose-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('orange-rose')">&times;</span>
+    <div class="modal-left">
+      <img src="orose.jpg" alt="Orange Rose">
+    </div>
+    <div class="modal-right">
+      <h2>Orange Rose</h2>
+      <p>Vibrant and bold. A fiery symbol of enthusiasm and energy.</p>
+      <p class="price">₹99 <span class="original">₹159</span> <span class="discount">25% off</span></p>
+      <p class="rating">⭐ 4.6 (314 reviews)</p>
+
+      <ul class="offers">
+        <li>🎟️ Use code <strong>TRYWITNI</strong> for ₹10% off</li>
+        <li>🎟️ Use code <strong>WIN50</strong> for ₹15 off</li>
+      </ul>
+      <button class="order-button" onclick="openOrderForm('Orange Rose')">Order Now</button>
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Basket Arrangements Section -->
+  <div class="category-block">
+    <h3>Basket Arrangements</h3>
+    <div class="card-row">
+      <div class="card">
+         <div class="product" onclick="openModal('baby-basket')">
+         <img src="babybasket.jpg" alt="Yellow Rose Basket">
+        <div class="card-info long title">
+          <p>New Born baby Flower Basket</p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+        <div class="product" onclick="openModal('birthday-basket')">
+          <img src="wbasket.jpg" alt="New Born Baby Flower Basket">
+          <div class="card-info long title">
+            <p>Birthday Flower Basket</p>
+          </div>
+        </div>
+      </div>
+    <div class="card">
+        <div class="product" onclick="openModal('wedding-basket')">
+        <img src="b.jpg" alt="Wedding flower Basket">
+        <div class="card-info">
+          <p>Wedding Flower Baskets</p>
+        </div>
+      </div>
+    </div>
+      <div class="card">
+        <div class="product" onclick="openModal('thanks-basket')">
+        <img src="tbasket2.jpg" alt="Thank You Flower Basket">
+        <div class="card-info">
+          <p>ThankYou Flower Basket</p>
+        </div>
+      </div>
+      </div>
+      <div class="card">
+        <div class="product" onclick="openModal('congrats-basket')">
+        <img src="cbasket.jpg" alt="Congratulations Flower Basket">
+        <div class="card-info">
+          <p>Congratulations Flower Basket</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+<!--basket arranngement modal-->
+  <div id="baby-basket-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('baby-basket')">&times;</span>
+    <div class="modal-left">
+      <img src="babybasket.jpg" alt="New Born Baby Flower Basket">
+    </div>
+    <div class="modal-right">
+      <h2>New Born Baby Flower Basket</h2>
+      <p class="price">₹499 <span class="original">₹999</span> <span class="discount">20% off</span></p>
+      <p class="rating">⭐ 4.8 (212 reviews)</p>
+      <ul class="offers">
+        <li>🎁 Free delivery on orders above ₹999</li>
+        <li>🎟️ Use code <strong>BLOSSOM20</strong> for 20% off</li>
+      </ul>
+      <button class="order-button" onclick="openOrderForm('New Born Baby Flower Basket')">Order Now</button>
+    </div>
+  </div>
+</div>
+<div id="birthday-basket-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('birthday-basket')">&times;</span>
+    <div class="modal-left">
+      <img src="wbasket.jpg" alt="Birthday Basket">
+    </div>
+    <div class="modal-right">
+      <h2>Birthday Flower Basket</h2>
+      <p class="price">₹499 <span class="original">₹999</span> <span class="discount">20% off</span></p>
+      <p class="rating">⭐ 4.8 (212 reviews)</p>
+      <ul class="offers">
+        <li>🎁 Free delivery on orders above ₹999</li>
+        <li>🎟️ Use code <strong>BLOSSOM20</strong> for 20% off</li>
+      </ul>
+      <button class="order-button" onclick="openOrderForm('Birthday Flower Basket')">Order Now</button>
+    </div>
+  </div>
+</div>
+<div id="wedding-basket-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('wedding-basket')">&times;</span>
+    <div class="modal-left">
+      <img src="bbasket.jpg" alt="Wedding Basket">
+    </div>
+    <div class="modal-right">
+      <h2>Wedding Flower Basket</h2>
+      <p class="price">₹599 <span class="original">₹999</span> <span class="discount">20% off</span></p>
+      <p class="rating">⭐ 4.8 (212 reviews)</p>
+      <ul class="offers">
+        <li>🎁 Free delivery on orders above ₹999</li>
+        <li>🎟️ Use code <strong>BLOSSOM20</strong> for 20% off</li>
+      </ul>
+      <button class="order-button" onclick="openOrderForm('Wedding Flower Basket')">Order Now</button>
+    </div>
+  </div>
+</div>
+<div id="thanks-basket-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('thanks-basket')">&times;</span>
+    <div class="modal-left">
+      <img src="tbasket2.jpg" alt="thanks Basket">
+    </div>
+    <div class="modal-right">
+      <h2>Thank You Flower Basket</h2>
+      <p class="price">₹699 <span class="original">₹999</span> <span class="discount">20% off</span></p>
+      <p class="rating">⭐ 4.8 (212 reviews)</p>
+      <ul class="offers">
+        <li>🎁 Free delivery on orders above ₹999</li>
+        <li>🎟️ Use code <strong>BLOSSOM20</strong> for 20% off</li>
+      </ul>
+      <button class="order-button" onclick="openOrderForm('Thank You Flower Basket')">Order Now</button>
+    </div>
+  </div>
+</div>
+<div id="congrats-basket-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('congrats-basket')">&times;</span>
+    <div class="modal-left">
+      <img src="wbasket.jpg" alt="congrats basket">
+    </div>
+    <div class="modal-right">
+      <h2>Congratulations Flower Basket</h2>
+      <p class="price">₹799 <span class="original">₹999</span> <span class="discount">20% off</span></p>
+      <p class="rating">⭐ 4.8 (212 reviews)</p>
+      <ul class="offers">
+        <li>🎁 Free delivery on orders above ₹999</li>
+        <li>🎟️ Use code <strong>BLOSSOM20</strong> for 20% off</li>
+      </ul>
+      <button class="order-button" onclick="openOrderForm('Congratulations Flower Basket')">Order Now</button>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Bouquets Section -->
+  <div class="category-block">
+    <h3>Bouquets</h3>
+    <div class="card-row">
+      <div class="card">
+        <div class="product" onclick="openModal('single-rose')">
+        <img src="1b.jpg" alt="3 Rose Bouquet">
+        <div class="card-info">
+          <p>Single Rose</p>
+        </div>
+      </div>
+    </div>
+      <div class="card">
+        <div class="product" onclick="openModal('3-rose')">
+        <img src="3b2.jpg" alt="6 Rose Bouquet">
+        <div class="card-info">
+          <p>3 Rose</p>
+        </div>
+      </div></div>
+      <div class="card">
+        <div class="product" onclick="openModal('6-rose')">
+          <img src="6b.jpg" alt="8 Rose Bouquet">
+          <div class="card-info">
+            <p>6 Rose</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="product" onclick="openModal('8-rose')">
+          <img src="8b.jpg" alt="8 Rose Bouquet">
+          <div class="card-info">
+            <p>8 Rose</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="product" onclick="openModal('20-rose')">
+          <img src="12.jpg" alt="20 Rose Bouquet">
+          <div class="card-info">
+            <p>20 Rose</p>
+          </div>
+      </div>
+    </div>
+  <!-- /bouquets modal -->
+   <div id="single-rose-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('single-rose')">&times;</span>
+    <div class="modal-left">
+      <img src="1b.jpg" alt="Single Rose">
+    </div>
+    <div class="modal-right">
+      <h2>Single Rose</h2>
+      <p class="price">₹149</p>
+      <p class="rating">⭐ 4.8 (102 reviews)</p>
+      <ul class="offers">
+        <li>🌹 Perfect for a sweet surprise</li>
+        <li>🎁 Comes with a mini message tag</li>
+      </ul>
+      <button class="order-button" onclick="openOrderForm('Single-Rose')">Order Now</button>
+    </div>
+  </div>
+</div>
+<div id="3-rose-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('3-rose')">&times;</span>
+    <div class="modal-left">
+      <img src="3b2.jpg" alt="3 Rose">
+    </div>
+    <div class="modal-right">
+      <h2>3 Rose</h2>
+      <p class="price">₹199</p>
+      <p class="rating">⭐ 4.8 (102 reviews)</p>
+      <ul class="offers">
+        <li>🌹 Perfect for a sweet surprise</li>
+        <li>🎁 Comes with a mini message tag</li>
+      </ul>
+      <button class="order-button" onclick="openOrderForm('3-Rose')">Order Now</button>
+    </div>
+  </div>
+</div>
+<div id="6-rose-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('6-rose')">&times;</span>
+    <div class="modal-left">
+      <img src="6b.jpg" alt="6 Rose">
+    </div>
+    <div class="modal-right">
+      <h2>6 Rose</h2>
+      <p class="price">₹299</p>
+      <p class="rating">⭐ 4.8 (102 reviews)</p>
+      <ul class="offers">
+        <li>🌹 Perfect for a sweet surprise</li>
+        <li>🎁 Comes with a mini message tag</li>
+      </ul>
+      <button class="order-button" onclick="openOrderForm('6-Rose')">Order Now</button>
+    </div>
+  </div>
+</div>
+<div id="8-rose-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('8-rose')">&times;</span>
+    <div class="modal-left">
+      <img src="8b.jpg" alt="8 Rose">
+    </div>
+    <div class="modal-right">
+      <h2>8 Rose</h2>
+      <p class="price">₹399</p>
+      <p class="rating">⭐ 4.8 (102 reviews)</p>
+      <ul class="offers">
+        <li>🌹 Perfect for a sweet surprise</li>
+        <li>🎁 Comes with a mini message tag</li>
+      </ul>
+      <button class="order-button" onclick="openOrderForm('8-Rose')">Order Now</button>
+    </div>
+  </div>
+</div>
+<div id="20-rose-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('20-rose')">&times;</span>
+    <div class="modal-left">
+      <img src="12.jpg" alt="20 Rose">
+    </div>
+    <div class="modal-right">
+      <h2>20 Rose</h2>
+      <p class="price">₹599</p>
+      <p class="rating">⭐ 4.8 (102 reviews)</p>
+      <ul class="offers">
+        <li>🌹 Perfect for a sweet surprise</li>
+        <li>🎁 Comes with a mini message tag</li>
+      </ul>
+      <button class="order-button" onclick="openOrderForm('20-Rose')">Order Now</button>
+    </div>
+  </div>
+</div>
+</section></section>
+<!-- Order Form Modal -->
+<div id="order-form-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('order-form')">&times;</span>
+    <h3>Place Your Order</h3>
+
+    <form id="order-form" class="order-form">
+      <input type="hidden" id="selected-product" name="product">
+
+      <div class="form-group">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="contact">Contact Number:</label>
+        <input type="tel" id="contact" name="contact" pattern="[0-9]{10}" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Delivery Address:</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" value="1">
+      </div>
+
+      <div class="form-group">
+        <label for="payment">Payment Option:</label>
+        <select id="payment" name="payment" required>
+          <option value="">-- Select Payment Method --</option>
+          <option value="UPI">UPI</option>
+          <option value="Cash on Delivery">Cash on Delivery</option>
+          <option value="Card Payment">Card Payment</option>
+        </select>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit">Confirm Order</button>
+      </div>
+    </form>
+  </div>
+</div>
+</section>
+  </main>
+<!-- ✅ Load EmailJS SDK as a module -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("fanKht2loloic3OOJ");
+</script>
+
+<!-- ✅ Main logic: modals, form, and email sending -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // 🔹 1. Toggle buttons (if used)
+    const buttons = document.querySelectorAll('.toggle-btn');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+
+    // 🔹 2. Modal open/close functions
+    function openModal(id) {
+      const modal = document.getElementById(id + '-modal');
+      if (modal) modal.style.display = 'block';
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(id + '-modal');
+      if (modal) modal.style.display = 'none';
+    }
+
+    // 🔹 3. Order form logic
+    function openOrderForm(productName) {
+      const input = document.getElementById('selected-product');
+      if (input) input.value = productName;
+      openModal('order-form');
+    }
+
+    const orderForm = document.getElementById('order-form');
+    if (orderForm) {
+      orderForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const product = document.getElementById('selected-product').value;
+  const name = document.getElementById('name').value;
+  const contact = document.getElementById('contact').value;
+  const email = document.getElementById('email').value;
+  const address = document.getElementById('address').value;
+  const quantity = document.getElementById('quantity').value;
+  const payment = document.getElementById('payment').value;
+
+  const templateParams = {
+    name,
+    contact,
+    email,
+    address,
+    quantity,
+    payment,
+    title: product,
+    to_email: email,
+    message: `Order placed for ${product} (x${quantity})\nDelivery Address: ${address}\nContact: ${contact}\nEmail: ${email}\nPayment Method: ${payment}`
+  };
+
+  window.emailjs.send("service_8tjsxua", "template_rr5ziii", templateParams)
+    .then(() => {
+      alert(`✅ Order placed!\nProduct: ${product}\nName: ${name}\nAddress: ${address}\nQuantity: ${quantity}`);
+      closeModal('order-form');
+      orderForm.reset();
+    })
+    .catch((error) => {
+      alert("❌ Failed to send confirmation email. Please try again.");
+      console.error("EmailJS error:", error);
+    });
+});
+    }
+    // 🔹 4. Expose modal functions globally
+    window.openOrderForm = openOrderForm;
+    window.openModal = openModal;
+    window.closeModal = closeModal;
+  });
+</script>
+<script>
+  function buyNow(productName, price) {
+    const item = {
+      name: productName,
+      price: price,
+      quantity: 1
+    };
+
+    fetch('http://localhost:3000/create-checkout-session', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items: [item] })
+    })
+    .then(res => res.json())
+    .then(data => {
+      window.location.href = data.checkoutUrl;
+    })
+    .catch(err => {
+      alert("❌ Payment setup failed. Please try again.");
+      console.error("Stripe error:", err);
+    });
+  }
+</script>
+
+<!-- ✅ Footer -->
+<footer>
+  <p>&copy; 2025 floravibe. Petals and pixels by Nimisha 🌸</p>
+</footer>
+</body>
+</html>

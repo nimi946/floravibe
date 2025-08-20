@@ -1,0 +1,87 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fffafc;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #ffe6f0;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  color: #cc0066;
+  font-size: 2rem;
+  margin: 0;
+}
+
+nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #cc0066;
+  font-weight: bold;
+}
+
+#gallery {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.intro h2 {
+  color: #b30059;
+  text-align: center;
+}
+
+.intro h3 {
+  color: #cc0066;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.intro p {
+  text-align: center;
+  color: #333;
+  max-width: 800px;
+  margin: 0.5rem auto;
+}
+
+.category {
+  margin-top: 3rem;
+}
+
+.category h3 {
+  color: #cc0066;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.flower-card {
+  width: 200px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.flower-card:hover {
+  transform: scale(1.05);
+}
+
+.flower-card img {
+  width: 100%;
+  border-radius: 6px;
+}

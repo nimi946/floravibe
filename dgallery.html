@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blossom Boutique | Gallery</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffaf7;
+      margin: 0;
+      padding: 2rem;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #b85c5c;
+      margin-bottom: 2rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .card h3 {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    .card p.price {
+      color: #b85c5c;
+      font-weight: bold;
+    }
+
+    .card button {
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #f2d0c4;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px; right: 15px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #999;
+    }
+
+    .modal-content input,
+    .modal-content textarea {
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .modal-content button {
+      background: #b85c5c;
+      color: white;
+      padding: 0.6rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+  </style>
+
+  <!-- ✅ EmailJS Global Script -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("-Wxi9litWj1INHfZ6"); // Your public key
+    })();
+  </script>
+</head>
+<body>
+
+  <h1>Our Flower Collection</h1>
+  <div class="gallery-grid" id="gallery"></div>
+
+  <!-- Order Form Modal -->
+  <div class="modal" id="orderModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeOrderForm()">✖</span>
+      <h2>Place Your Order</h2>
+      <form action="https://formsubmit.co/nimishasathish946@gmail.com" method="POST">
+        <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" id="productName" name="Product" />
+
+        <input type="text" name="Name" placeholder="Your Name" required />
+        <input type="email" name="CustomerEmail" placeholder="Your Email" required />
+        <input type="text" name="Contact" placeholder="Phone Number" required />
+        <input type="text" name="Address" placeholder="Delivery Address" required />
+        <input type="number" name="Quantity" placeholder="Quantity" required />
+
+        <button type="submit">Place Order</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const flowers = [
+      {
+        id: "rose",
+        name: "Red Rose",
+        price: "₹150",
+        image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb",
+        description: "Classic red roses for love and romance"
+      },
+      {
+        id: "lily",
+        name: "White Lily",
+        price: "₹180",
+        image: "https://images.unsplash.com/photo-1592928307030-7d7b6f3c3c5e",
+        description: "Elegant lilies for peaceful vibes"
+      },
+      {
+        id: "sunflower",
+        name: "Sunflower",
+        price: "₹120",
+        image: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6",
+        description: "Bright sunflowers to lift your mood"
+      }
+    ];
+
+    const gallery = document.getElementById("gallery");
+
+    flowers.forEach(flower => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <img src="${flower.image}" alt="${flower.name}">
+        <h3>${flower.name}</h3>
+        <p>${flower.description}</p>
+        <p class="price">${flower.price}</p>
+        <button onclick="openOrderForm('${flower.id}')">Order Now</button>
+      `;
+      gallery.appendChild(card);
+    });
+
+    function openOrderForm(flowerId) {
+      const selected = flowers.find(f => f.id === flowerId);
+      document.getElementById("productName").value = selected.name;
+      document.getElementById("orderModal").style.display = "flex";
+    }
+
+    function closeOrderForm() {
+      document.getElementById("orderModal").style.display = "none";
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.querySelector("form");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const customerName = form.querySelector('input[name="Name"]').value;
+        const customerEmail = form.querySelector('input[name="CustomerEmail"]').value;
+        const productName = form.querySelector('input[name="Product"]').value;
+        const quantity = form.querySelector('input[name="Quantity"]').value;
+
+        const messageBody = `
+Thank you for your order of ${quantity} x ${productName} 🌸  
+We’re preparing your flowers with love and care.  
+You’ll receive a follow-up once they’re ready for delivery.
+`;
+
+        emailjs.send("service_8tjsxua", "template_rr5ziii", {
+          name: customerName,
+          message: messageBody,
+          title: "Order Confirmation",
+          to_email: customerEmail
+        })
+        .then(function(response) {
+          console.log("Customer email sent!", response.status);
+          form.submit();
+        })
+        .catch(function(error) {
+          console.error("EmailJS error:", error);
+          form.submit();
+        });
+      });
+    });
+  </script>
+</body>
+</html>

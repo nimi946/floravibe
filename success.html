@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You – Blossom Boutique</title>
+  <link rel="stylesheet" href="style.css"> <!-- Optional: reuse your existing styles -->
+</head>
+<body>
+  <main class="thank-you">
+    <h2>Thank You for Your Order! 🌸</h2>
+    <p>Your payment was successful, and your Red Rose is on its way.</p>
+    <p>We’ll send you a confirmation email shortly. Until then, enjoy the floral magic!</p>
+    <a href="gallery.html" class="btn">Back to Gallery</a>
+  </main>
+  <div id="confirmationModal" style="display:none;">
+  <div class="modal-content">
+    <h2>Thank you for your order!</h2>
+    <p>Your flowers are on their way 🌸</p>
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("confirmationModal").style.display = "block";
+  });
+
+  function closeModal() {
+    document.getElementById("confirmationModal").style.display = "none";
+  }
+</script>
+</body>
+</html>

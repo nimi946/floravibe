@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | floravibe</title>
+  <link rel="stylesheet" href="pstyle.css">
+  <link rel="shortcut icon" type="image/png" href="fav-icon.png">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    emailjs.init("fanKht2loloic3OOJ"); // Replace with your actual EmailJS user ID
+  </script>
+</head>
+<body>
+  <header>
+    <input type="checkbox" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+    <a href="#" class="logo">floravibe<span>.</span></a>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <section class="contact-hero">
+    <div class="hero-image">
+      <img src="cpage.jpg" alt="Fresh flowers at floravibe">
+      <div class="hero-text">
+      <h2>Thank You for Shopping at floravibe 🌷</h2>
+      <p>We’d love to hear your thoughts—feel free to leave feedback below!</p>
+
+    </div>
+  </section>
+  <section class="feedback-intro">
+  <p>We value your thoughts and would love to hear about your experience with floravibe.</p>
+  <button onclick="document.getElementById('feedback-form').scrollIntoView({ behavior: 'smooth' });">
+  Leave Feedback
+</button>
+</section>
+<section class="contact-intro">
+  <p>
+    Every message you send is a petal in our bouquet of connection. 🌷  
+    Whether you're planning an event, sending a gift, or simply saying hello—we're here to listen and bloom with you.
+  </p>
+</section>
+
+  <main class="contact">
+    <section class="contact-card">
+      <h2>We’d Love to Hear from You 🌺</h2>
+      <p>Whether you're planning an event, sending a gift, or just saying hello—reach out anytime!</p>
+      <ul>
+        <li><strong>📍 Address:</strong> 123 Petal Lane, Floral City, IN 600001</li>
+        <li><strong>📞 Phone:</strong> +91 98765 43210</li>
+        <li><strong>📧 Email:</strong> hello@floravibe.in</li>
+        <li><strong>🕒 Hours:</strong> Mon–Sat: 9:00 AM to 7:00 PM <span id="status"></span></li>
+      </ul>
+    </section>
+
+    <section id="feedback-form" class="contact-form">
+      <h3>Send Us a Message 🌸</h3>
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="to_email" placeholder="Email Address" required>
+        <select name="reason" required>
+          <option value="">Select a reason 🌼</option>
+          <option value="event">Event Inquiry</option>
+          <option value="gift">Gift Order</option>
+          <option value="feedback">Feedback</option>
+          <option value="hello">Just Saying Hello</option>
+        </select>
+        <textarea name="message" rows="6" placeholder="Type your message here..." required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <div id="thankYouModal" style="display:none;" class="modal">
+    <div class="modal-content">
+      <h3>Thank you for reaching out! 🌸</h3>
+      <p>We’ll get back to you soon with petals of joy.</p>
+      <button onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 floravibe | Designed by Nimisha in bloom 🌷</p>
+  </footer>
+
+  <script>
+  // 🌼 Dynamic Hours Indicator
+  const now = new Date();
+  const day = now.getDay(); // Sunday = 0
+  const hour = now.getHours();
+  const isOpen = day >= 1 && day <= 6 && hour >= 9 && hour < 19;
+  document.getElementById("status").textContent = isOpen ? "🌼 We're open!" : "🌙 We're closed";
+
+  // 💌 EmailJS Form Submission
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // 1️⃣ Send to shopkeeper
+    emailjs.sendForm("service_8tjsxua", "template_e4kjpkq", this)
+      .then(() => {
+        console.log("Shopkeeper notified");
+      }, (error) => {
+        console.error("Error sending to shopkeeper:", error);
+      });
+
+    // 2️⃣ Send to customer
+    emailjs.sendForm("service_8tjsxua", "template_rr5ziii", this)
+      .then(() => {
+        document.getElementById("thankYouModal").style.display = "block";
+        this.reset();
+      }, (error) => {
+        alert("Oops! Something went wrong. Please try again.");
+        console.error("EmailJS error:", error);
+      });
+  });
+
+  // 🌸 Close Thank-You Modal
+  function closeModal() {
+    document.getElementById("thankYouModal").style.display = "none";
+  }
+</script>
+</body>
+</html>
